@@ -11,6 +11,7 @@ public class MovingPlayer : MonoBehaviour {
 	public int jumpPulse;
 	public int flapping;
 	public int facing = 1;
+	private float jumpTime = 0;
 	private float time = 0;
 	private float initSpeed;
 	private float moveX = 0;
@@ -50,10 +51,13 @@ public class MovingPlayer : MonoBehaviour {
 		}
 
 
-		if (Input.GetAxis ("Jump") > 0 && jumpReady) { //Y to jump with a controller
+		if (Input.GetAxis ("Jump") > 0 && jumpReady && jumpTime > 0.2) { //Y to jump with a controller
 			rb.AddForce (new Vector2 (0, 10 * jumpPulse));
 			jumpReady = false;
+			jumpTime = 0;
 		}
+
+		jumpTime += Time.deltaTime;
 			
 		//check for falling on side
 		if (this.transform.localEulerAngles.z > 70 && this.transform.localEulerAngles.z < 290) {
