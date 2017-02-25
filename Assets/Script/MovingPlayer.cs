@@ -16,45 +16,43 @@ public class MovingPlayer : MonoBehaviour {
 	private bool jumpReady = true;
 	public bool spamDisplay;
 
-	void Start() 
-	{
-		rb = this.GetComponent<Rigidbody2D>();
+	void Start () {
+		rb = this.GetComponent<Rigidbody2D> ();
 		initSpeed = playerSpeed;
 	}
 
 	// Update is called once per frame
 	void FixedUpdate () {
 
-
 		moveX = Input.GetAxis ("Horizontal");
 
 		if (moveX != 0) {
 			//jumpy
-			if(time <= 0.1)
-				this.transform.Rotate(0, 0, flapping);
+			if (time <= 0.1)
+				this.transform.Rotate (0, 0, flapping);
 			else if (time > 0.1) {
 				this.transform.Rotate (0, 0, -flapping);
 				time = 0;
 			}
 			time += Time.deltaTime;
 		}
-		this.transform.Translate ((moveX/(100-playerSpeed))*facing,0,0);
+		this.transform.Translate ((moveX / (100 - playerSpeed)) * facing, 0, 0);
 
-		if ((moveX < 0 && facing==1)||(moveX > 0 && facing==-1)) {
-			this.transform.Rotate(0, 180, 0);
+		if ((moveX < 0 && facing == 1) || (moveX > 0 && facing == -1)) {
+			this.transform.Rotate (0, 180, 0);
 			facing = facing * -1;
 		}
 
 
-		if (Input.GetAxis("Jump")>0 && jumpReady) { //Y to jump with a controller
-			rb.AddForce(new Vector2(0,10*jumpPulse));
+		if (Input.GetAxis ("Jump") > 0 && jumpReady) { //Y to jump with a controller
+			rb.AddForce (new Vector2 (0, 10 * jumpPulse));
 			jumpReady = false;
 		}
 			
 		//check for falling on side
 		if (this.transform.localEulerAngles.z > 70 && this.transform.localEulerAngles.z < 290) {
 			if (spamDisplay) {
-				switch (Random.Range(0,3)) {
+				switch (Random.Range (0, 3)) {
 				case 0:
 					spam.text = "WTF!?!!";
 					break;
@@ -70,8 +68,7 @@ public class MovingPlayer : MonoBehaviour {
 				}
 				spamDisplay = false;
 			}
-		} 
-		else {
+		} else {
 			spam.text = "";
 			spamDisplay = true;
 		}
@@ -85,6 +82,7 @@ public class MovingPlayer : MonoBehaviour {
 			playerSpeed = initSpeed;
 		}
 	}
+
 
 	void OnCollisionExit2D (Collision2D col) {
 		playerSpeed = playerSpeedWhileJump;
