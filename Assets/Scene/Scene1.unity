@@ -3513,34 +3513,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11407670, guid: 68661c97d3b6c44f1801351a08046553, type: 2}
-      propertyPath: spam
-      value: 
-      objectReference: {fileID: 1032605666}
-    - target: {fileID: 21228888, guid: 68661c97d3b6c44f1801351a08046553, type: 2}
-      propertyPath: m_SortingLayerID
-      value: -901964901
-      objectReference: {fileID: 0}
-    - target: {fileID: 11407670, guid: 68661c97d3b6c44f1801351a08046553, type: 2}
-      propertyPath: flapping
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11407670, guid: 68661c97d3b6c44f1801351a08046553, type: 2}
-      propertyPath: spamDisplay
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5077462, guid: 68661c97d3b6c44f1801351a08046553, type: 2}
-      propertyPath: m_Mass
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11407670, guid: 68661c97d3b6c44f1801351a08046553, type: 2}
-      propertyPath: jumpPulse
-      value: 325
-      objectReference: {fileID: 0}
-    - target: {fileID: 5077462, guid: 68661c97d3b6c44f1801351a08046553, type: 2}
-      propertyPath: m_GravityScale
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 68661c97d3b6c44f1801351a08046553, type: 2}
   m_IsPrefabParent: 0
@@ -5820,7 +5792,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19217a2a073c041478ec902a79a348e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 3
   exitDoor: {fileID: 1432707643}
 --- !u!61 &2106393140
 BoxCollider2D:
