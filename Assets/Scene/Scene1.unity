@@ -97,6 +97,7 @@ GameObject:
   - 92: {fileID: 8284306}
   - 124: {fileID: 8284305}
   - 81: {fileID: 8284304}
+  - 114: {fileID: 8284309}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -171,6 +172,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &8284309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 8284303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5947216a1d530434185646a95c1176e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerFollowed: {fileID: 900495195}
 --- !u!1 &185714544
 GameObject:
   m_ObjectHideFlags: 0
@@ -335,11 +348,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 454954, guid: 68661c97d3b6c44f1801351a08046553, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.8232846
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 454954, guid: 68661c97d3b6c44f1801351a08046553, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -1.0658194
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 454954, guid: 68661c97d3b6c44f1801351a08046553, type: 2}
       propertyPath: m_LocalPosition.z
@@ -389,11 +402,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 490220, guid: aa4c7598744254a6f9f1ede1cd873a52, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.61
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 490220, guid: aa4c7598744254a6f9f1ede1cd873a52, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.23
+      value: -3.2
       objectReference: {fileID: 0}
     - target: {fileID: 490220, guid: aa4c7598744254a6f9f1ede1cd873a52, type: 2}
       propertyPath: m_LocalPosition.z
