@@ -6,21 +6,22 @@ using UnityEngine.UI;
 public class npcInsult : MonoBehaviour {
 
 	public Text insult;
+	public string insult1, insult2, insult3, insult4;
 	
 	// Update is called once per frame
 	void OnTriggerEnter2D (Collider2D other) {
 		switch (Random.Range (0, 3)) {
 		case 0:
-			insult.text = "Cunt!";
+			insult.text = insult1;
 			break;
 		case 1:
-			insult.text = "Stupid!";
+			insult.text = insult2;
 			break;
 		case 2:
-			insult.text = "Get Out!";
+			insult.text = insult3;
 			break;
 		case 3:
-			insult.text = "Idiot!";
+			insult.text = insult4;
 			break;
 		}
 	}
