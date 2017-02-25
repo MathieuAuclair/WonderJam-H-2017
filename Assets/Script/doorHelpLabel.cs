@@ -2,15 +2,16 @@
 using UnityEngine.UI;
 using System.Collections;
 
+// Analysis disable once CheckNamespace
 public class doorHelpLabel : MonoBehaviour {
 
 	public Text openDoor;
 
-	void OntriggerEnter2D (Collider2D other) {
+	public void OnTriggerEnter2D (Collider2D other) {
 		openDoor.text = "Press button to open";
 	}
 
-	void OntriggerExit2D (Collider2D other) {
+	public void OnTriggerExit2D (Collider2D other) {
 		openDoor.text = "";
 	}
 }
