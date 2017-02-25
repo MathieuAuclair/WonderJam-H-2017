@@ -7,7 +7,9 @@ public class MovingPlayer : MonoBehaviour {
 	public float playerSpeed;
 	public float playerSpeedWhileJump = 25;
 	public int jumpPulse;
+	public int flapping;
 	public int facing = 1;
+	private float time = 0;
 	private float initSpeed;
 	private float moveX = 0;
 	private Rigidbody2D rb;
@@ -25,6 +27,17 @@ public class MovingPlayer : MonoBehaviour {
 
 
 		moveX = Input.GetAxis ("Horizontal");
+
+		if (moveX != 0) {
+			//jumpy
+			if(time <= 0.1)
+				this.transform.Rotate(0, 0, flapping);
+			else if (time > 0.1) {
+				this.transform.Rotate (0, 0, -flapping);
+				time = 0;
+			}
+			time += Time.deltaTime;
+		}
 		this.transform.Translate ((moveX/(100-playerSpeed))*facing,0,0);
 
 		if ((moveX < 0 && facing==1)||(moveX > 0 && facing==-1)) {
