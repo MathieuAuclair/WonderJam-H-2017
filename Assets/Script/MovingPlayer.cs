@@ -62,7 +62,7 @@ public class MovingPlayer : MonoBehaviour {
 		//check for falling on side
 		if (this.transform.localEulerAngles.z > 70 && this.transform.localEulerAngles.z < 290) {
 			if (spamDisplay) {
-				switch (Random.Range (0, 3)) {
+				switch (Random.Range (0, 5)) {
 				case 0:
 					spam.text = "WTF!?!!";
 					break;
@@ -73,6 +73,12 @@ public class MovingPlayer : MonoBehaviour {
 					spam.text = "GOD DAMMIT!";
 					break;
 				case 3:
+					spam.text = "THANKS OBAMA!";
+					break;
+				case 4:
+					spam.text = "F***! OFF!!";
+					break;
+				case 5:
 					spam.text = "SHIT!";
 					break;
 				}
