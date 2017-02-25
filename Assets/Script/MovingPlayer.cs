@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using System.Collections;
 
 // Analysis disable once CheckNamespace
@@ -27,8 +26,8 @@ public class MovingPlayer : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		if(this.transform.position.y < -250)
-			SceneManager.LoadScene ("Scene1");
+		if (this.transform.position.y < -250)
+			this.transform.position = new Vector3 (132,29,-1);
 
 
 		moveX = Input.GetAxis ("Horizontal");

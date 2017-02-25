@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Analysis disable once CheckNamespace
 public class DisplayScore : MonoBehaviour {
 
 	private bool UIshown = true;
 	public GameObject player;
 	public GameObject camScene;
-	public static int stamina = 0, propaganda = 0, suspicius = 0; 
-
+	public int stamina = 100, propaganda = 0, suspicius = 0, days = 10;
 	private float time = 0;
 
 	// Update is called once per frame
