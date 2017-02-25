@@ -7,8 +7,13 @@ public class DisplayScore : MonoBehaviour {
 	private bool UIshown = true;
 	public GameObject player;
 	public GameObject camScene;
-	public int stamina = 100, propaganda = 0, suspicius = 0, days = 10;
+	public int stamina, propaganda, suspicius, days;
 	private float time = 0;
+	void Start(){
+		stamina = 100;
+		days = 10;
+	}
+
 
 	// Update is called once per frame
 	void Update () {

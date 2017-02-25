@@ -25,12 +25,12 @@ public class Interact : MonoBehaviour {
 			staminaLevel.text = UIdisplay.GetComponent<DisplayScore> ().stamina + "%";
 			break;
 		case 2:
-			UIdisplay.GetComponent<DisplayScore> ().suspicius += 1;
-			staminaLevel.text = UIdisplay.GetComponent<DisplayScore> ().suspicius + "%";
+			UIdisplay.GetComponent<DisplayScore> ().suspicius -= 1;
+			suspiciousLevel.text = UIdisplay.GetComponent<DisplayScore> ().suspicius + "%";
 			break;
 		case 3:
 			UIdisplay.GetComponent<DisplayScore> ().propaganda += 1;
-			staminaLevel.text = UIdisplay.GetComponent<DisplayScore> ().propaganda + "%";
+			propaganda.text = UIdisplay.GetComponent<DisplayScore> ().propaganda + "%";
 			break;
 		}
 	}
