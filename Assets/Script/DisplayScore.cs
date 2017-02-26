@@ -8,9 +8,9 @@ public class DisplayScore : MonoBehaviour {
 	public Text propText, suspText, stamText, daysText, popUp;
 	private bool win;
 	private bool UIshown = true; 
-	public bool usedSpam = false;
+	public bool usedSpam = false, mkPropaganda;
 	private float usedStam, usedSusp, timeProp, timeSpam;
-	private bool work = false, usedProp = false;
+	public bool work = false;
 	public GameObject player;
 	public GameObject camScene;
 	public int stamina, propaganda, suspicius, days;
@@ -22,7 +22,7 @@ public class DisplayScore : MonoBehaviour {
 		stamina = 100;
 		days = 10;
 	}
-
+		
 	// Update is called once per frame
 	void Update () {
 
@@ -34,6 +34,7 @@ public class DisplayScore : MonoBehaviour {
 
 		//day cycle
 
+
 		timeGame += Time.deltaTime;
 		if (timeGame > 40) {
 			timeGame = 0;
@@ -42,6 +43,7 @@ public class DisplayScore : MonoBehaviour {
 			popUp.text = days + " days Left";
 			usedSpam = true;
 		}
+
 
 		//check to remove stamina
 
@@ -57,20 +59,30 @@ public class DisplayScore : MonoBehaviour {
 			}
 		}
 
+
 		//check to add suspicious if not working
 
-		if (!work && !usedProp && timeProp > 8) {
+		if (!work && !mkPropaganda && timeProp > 8) {
 			timeProp = 0;
 			suspicius += 1;
 			suspText.text = suspicius + "%";
-		} 
-		else if (usedProp && timeProp > 8) {
+			} 
+			else if (mkPropaganda && timeProp > 3) {
 			timeProp = 0;
-			suspicius += 7;
+			suspicius += 5;
 			suspText.text = suspicius + "%";
+			propaganda += 1;
+			propText.text = propaganda + "%";
+			if (propaganda == 50 || propaganda == 70 || propaganda == 90) {
+				usedSpam = true;
+				popUp.text = suspicius + "% of population against B.B.";
+			} 
 			if (suspicius == 50 || suspicius == 70 || suspicius == 90) {
 				usedSpam = true;
 				popUp.text = "Highly suspicious " + suspicius + "%";
+			} 
+			else if (work && timeProp > 8) {
+			
 			}
 		}
 		timeProp += Time.deltaTime;

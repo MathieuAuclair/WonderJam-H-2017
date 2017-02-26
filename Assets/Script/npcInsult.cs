@@ -10,7 +10,7 @@ public class npcInsult : MonoBehaviour {
 	
 	// Update is called once per frame
 	void OnTriggerEnter2D (Collider2D other) {
-		switch (Random.Range (0, 3)) {
+		switch (Random.Range (0, 4)) {
 		case 0:
 			insult.text = insult1;
 			break;

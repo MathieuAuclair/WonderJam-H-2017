@@ -2021,6 +2021,7 @@ GameObject:
   - 212: {fileID: 600298360}
   - 114: {fileID: 600298362}
   - 61: {fileID: 600298363}
+  - 114: {fileID: 600298364}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -2084,7 +2085,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openDoor: {fileID: 1013103912}
   changed: 1
-  msg: Press Button to sleep
+  msg: Much Sleeping, adding many stamina
 --- !u!61 &600298363
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2099,6 +2100,19 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 4.12, y: 2.37}
+--- !u!114 &600298364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 600298359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2434bc93d572a47949d317dfc90eec4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeStamPropSuspi: 1
+  UI: {fileID: 2021649592}
 --- !u!1 &601896682
 GameObject:
   m_ObjectHideFlags: 0
@@ -3372,7 +3386,7 @@ GameObject:
   - 222: {fileID: 1015023342}
   - 114: {fileID: 1015023341}
   m_Layer: 5
-  m_Name: Suspicious
+  m_Name: Suspicious1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6420,6 +6434,7 @@ GameObject:
   - 212: {fileID: 1909586237}
   - 61: {fileID: 1909586236}
   - 114: {fileID: 1909586239}
+  - 114: {fileID: 1909586240}
   m_Layer: 0
   m_Name: Character3
   m_TagString: Untagged
@@ -6492,12 +6507,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1909586235}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b54bfb856b0e47958dd90ed7aa60a32, type: 3}
+  m_Script: {fileID: 11500000, guid: d1c3b88df1d504298adf48a27966e04c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openDoor: {fileID: 1015023341}
-  changed: 1
-  msg: press button to create propaganda
+  insult: {fileID: 1015023341}
+  insult1: B.B. must die! He don't like cute cat picture!
+  insult2: I DON'T KNOW SHIT! FOLLOW MY LEAD!!!
+  insult3: TRUMP WAS RIGHT, BIG BROTHER IS NOT!!
+  insult4: is there someone who could tell me why we're protesting?
+--- !u!114 &1909586240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1909586235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2434bc93d572a47949d317dfc90eec4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeStamPropSuspi: 2
+  UI: {fileID: 2021649592}
 --- !u!1 &1946429569
 GameObject:
   m_ObjectHideFlags: 0
@@ -6587,6 +6617,7 @@ GameObject:
   - 212: {fileID: 1965182152}
   - 114: {fileID: 1965182154}
   - 61: {fileID: 1965182155}
+  - 114: {fileID: 1965182156}
   m_Layer: 0
   m_Name: Table
   m_TagString: Untagged
@@ -6650,7 +6681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   openDoor: {fileID: 1550841644}
   changed: 1
-  msg: Press button to work
+  msg: Real busy! surely not againt B.B. Love working, full freedom!
 --- !u!61 &1965182155
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6665,6 +6696,19 @@ BoxCollider2D:
   m_Offset: {x: -0.16, y: 0.25}
   serializedVersion: 2
   m_Size: {x: 3.88, y: 2.67}
+--- !u!114 &1965182156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1965182151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2434bc93d572a47949d317dfc90eec4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeStamPropSuspi: 3
+  UI: {fileID: 0}
 --- !u!1 &2021649592
 GameObject:
   m_ObjectHideFlags: 0
@@ -6741,6 +6785,7 @@ MonoBehaviour:
   daysText: {fileID: 1222762938}
   popUp: {fileID: 1032605666}
   usedSpam: 0
+  mkPropaganda: 0
   player: {fileID: 900495195}
   camScene: {fileID: 8284303}
   stamina: 0
