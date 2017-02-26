@@ -2021,7 +2021,6 @@ GameObject:
   - 212: {fileID: 600298360}
   - 114: {fileID: 600298362}
   - 61: {fileID: 600298363}
-  - 114: {fileID: 600298364}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -2100,22 +2099,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 4.12, y: 2.37}
---- !u!114 &600298364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 600298359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9057a044a36524859a1c9c2e5301d533, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  impact: 1
-  staminaLevel: {fileID: 980328280}
-  suspiciousLevel: {fileID: 1030991470}
-  propaganda: {fileID: 265228953}
-  UIdisplay: {fileID: 2021649592}
 --- !u!1 &601896682
 GameObject:
   m_ObjectHideFlags: 0
@@ -4325,15 +4308,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 454954, guid: 68661c97d3b6c44f1801351a08046553, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 132.33
+      value: 132
       objectReference: {fileID: 0}
     - target: {fileID: 454954, guid: 68661c97d3b6c44f1801351a08046553, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 29.18
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 454954, guid: 68661c97d3b6c44f1801351a08046553, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.099999994
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 454954, guid: 68661c97d3b6c44f1801351a08046553, type: 2}
       propertyPath: m_LocalRotation.x
@@ -4379,6 +4362,10 @@ Prefab:
       propertyPath: spam
       value: 
       objectReference: {fileID: 1032605666}
+    - target: {fileID: 11407670, guid: 68661c97d3b6c44f1801351a08046553, type: 2}
+      propertyPath: UIspam
+      value: 
+      objectReference: {fileID: 2021649592}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 68661c97d3b6c44f1801351a08046553, type: 2}
   m_IsPrefabParent: 0
@@ -6433,7 +6420,6 @@ GameObject:
   - 212: {fileID: 1909586237}
   - 61: {fileID: 1909586236}
   - 114: {fileID: 1909586239}
-  - 114: {fileID: 1909586240}
   m_Layer: 0
   m_Name: Character3
   m_TagString: Untagged
@@ -6512,22 +6498,6 @@ MonoBehaviour:
   openDoor: {fileID: 1015023341}
   changed: 1
   msg: press button to create propaganda
---- !u!114 &1909586240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1909586235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9057a044a36524859a1c9c2e5301d533, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  impact: 3
-  staminaLevel: {fileID: 980328280}
-  suspiciousLevel: {fileID: 1030991470}
-  propaganda: {fileID: 265228953}
-  UIdisplay: {fileID: 2021649592}
 --- !u!1 &1946429569
 GameObject:
   m_ObjectHideFlags: 0
@@ -6617,7 +6587,6 @@ GameObject:
   - 212: {fileID: 1965182152}
   - 114: {fileID: 1965182154}
   - 61: {fileID: 1965182155}
-  - 114: {fileID: 1965182156}
   m_Layer: 0
   m_Name: Table
   m_TagString: Untagged
@@ -6696,22 +6665,6 @@ BoxCollider2D:
   m_Offset: {x: -0.16, y: 0.25}
   serializedVersion: 2
   m_Size: {x: 3.88, y: 2.67}
---- !u!114 &1965182156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1965182151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9057a044a36524859a1c9c2e5301d533, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  impact: 2
-  staminaLevel: {fileID: 980328280}
-  suspiciousLevel: {fileID: 980328280}
-  propaganda: {fileID: 265228953}
-  UIdisplay: {fileID: 2021649592}
 --- !u!1 &2021649592
 GameObject:
   m_ObjectHideFlags: 0
@@ -6782,11 +6735,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823add0e0e76b4f4894be8c514dac03f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  propText: {fileID: 265228953}
+  suspText: {fileID: 1030991470}
+  stamText: {fileID: 980328280}
+  daysText: {fileID: 1222762938}
+  popUp: {fileID: 1032605666}
+  usedSpam: 0
   player: {fileID: 900495195}
   camScene: {fileID: 8284303}
   stamina: 0
   propaganda: 0
   suspicius: 0
+  days: 10
 --- !u!1 &2038697219
 GameObject:
   m_ObjectHideFlags: 0

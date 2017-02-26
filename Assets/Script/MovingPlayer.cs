@@ -5,6 +5,7 @@ using System.Collections;
 // Analysis disable once CheckNamespace
 public class MovingPlayer : MonoBehaviour {
 	public Text spam;
+	public GameObject UIspam;
 	public float playerSpeed;
 	public float playerSpeedWhileJump = 25;
 	public int jumpPulse;
@@ -59,7 +60,7 @@ public class MovingPlayer : MonoBehaviour {
 		jumpTime += Time.deltaTime;
 			
 		//check for falling on side
-		if (this.transform.localEulerAngles.z > 70 && this.transform.localEulerAngles.z < 290) {
+		if (this.transform.localEulerAngles.z > 70 && this.transform.localEulerAngles.z < 290 && !UIspam.GetComponent<DisplayScore>().usedSpam) {
 			if (spamDisplay) {
 				switch (Random.Range (0, 5)) {
 				case 0:
@@ -83,7 +84,7 @@ public class MovingPlayer : MonoBehaviour {
 				}
 				spamDisplay = false;
 			}
-		} else {
+		} else if (!UIspam.GetComponent<DisplayScore>().usedSpam){
 			spam.text = "";
 			spamDisplay = true;
 		}
