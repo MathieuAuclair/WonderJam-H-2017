@@ -27,8 +27,10 @@ public class MovingPlayer : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		if (this.transform.position.y < -250)
-			this.transform.position = new Vector3 (132,29,-1);
+		if (this.transform.position.y < -250) {
+			UIspam.GetComponent<DisplayScore> ().win = true;
+			UIspam.GetComponent<DisplayScore> ().winMsg = "died because you felt from high!";
+		}
 
 
 		moveX = Input.GetAxis ("Horizontal");

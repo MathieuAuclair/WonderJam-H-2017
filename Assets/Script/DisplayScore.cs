@@ -6,7 +6,8 @@ using System.Collections;
 public class DisplayScore : MonoBehaviour {
 
 	public Text propText, suspText, stamText, daysText, popUp;
-	private bool win;
+	public bool win;
+	public string winMsg;
 	private bool UIshown = true; 
 	public bool usedSpam = false, mkPropaganda;
 	private float usedStam, usedSusp, timeProp, timeSpam;
@@ -66,24 +67,36 @@ public class DisplayScore : MonoBehaviour {
 			timeProp = 0;
 			suspicius += 1;
 			suspText.text = suspicius + "%";
-			} 
-			else if (mkPropaganda && timeProp > 3) {
+		} 
+		else if (mkPropaganda && timeProp > 3) {
 			timeProp = 0;
 			suspicius += 5;
 			suspText.text = suspicius + "%";
 			propaganda += 1;
 			propText.text = propaganda + "%";
-			if (propaganda == 50 || propaganda == 70 || propaganda == 90) {
-				usedSpam = true;
-				popUp.text = suspicius + "% of population against B.B.";
-			} 
-			if (suspicius == 50 || suspicius == 70 || suspicius == 90) {
+			popUp.text = propaganda + "% of propaganda";
+			usedSpam = true;
+			if (suspicius > 50) {
 				usedSpam = true;
 				popUp.text = "Highly suspicious " + suspicius + "%";
+
+				//add a condition to kill him faster if he's too suspicious
+
+
+				if(Random.Range(0, Mathf.Round(100/suspicius)) == 0)
+				{
+					suspicius += 10;
+					suspText.text = suspicius + "%";
+				}
+
 			} 
-			else if (work && timeProp > 8) {
-			
-			}
+		}
+		else if (work && timeProp > 1 && suspicius > 4) {
+			timeProp = 0;
+			suspicius -= 5;
+			suspText.text = suspicius + "%";
+			usedSpam = true;
+			popUp.text = suspicius + "% suspicious";
 		}
 		timeProp += Time.deltaTime;
 
@@ -103,14 +116,14 @@ public class DisplayScore : MonoBehaviour {
 
 		if (stamina < 0 && !win) {
 			win = true;
-			//winMsg = "You died because of low stamina";
+			winMsg = "You died because of low stamina";
 		} else if (suspicius > 99 && !win) {
 			win = true;
-			//winMsg = "You died because you were too suspicious"
+			winMsg = "You died because you were too suspicious";
 		} 
 		else if (propaganda > 99 && !win) {
 			win = true;
-			//winMsg = "You won, you raised population against B.B."
+			winMsg = "You won, you raised population against B.B.";
 		}
 
 
